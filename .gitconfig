@@ -1,0 +1,61 @@
+[alias]
+	c = commit -am
+	up = pull
+	p = push
+	s = status
+	df = diff --color --color-words --abbrev
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+	ui = always
+[core]
+	excludesfile = /Users/$USER/.gitignore
+	attributesfile = ~/.gitattributes
+	editor = atom -n -w
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold
+	old = red bold
+	new = green bold
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+[merge]
+	log = true
+	tool = opendiff
+	keepBackup = false
+	keepTemporaries = false
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+[url "git://github.com/"]
+	insteadOf = "github:"
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
+[user]
+	name = Ollo
+	email = joshua@ollomedia.com
+[mergetool]
+	keepBackup = false
+	keepTemporaries = false
+[push]
+	default = simple
+[diff]
+	tool = opendiff
+[help]
+	autocorrect = 1
+[difftool "opendiff"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "opendiff"]
+	cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
